@@ -6,11 +6,13 @@ import (
 	"github.com/fasthttp/websocket"
 	"github.com/savsgio/atreugo/v11"
 	"github.com/savsgio/dictpool"
+	"github.com/savsgio/go-logger"
 )
 
 // Upgrader tool to convert the websocket view to an atreugo view
 type Upgrader struct {
-	*websocket.FastHTTPUpgrader
+	upgrader *websocket.FastHTTPUpgrader
+	logger   *logger.Logger
 }
 
 // Config configuration for upgrading an HTTP connection to a WebSocket connection.
@@ -44,7 +46,10 @@ type Config struct {
 
 	// Error specifies the function for generating HTTP error responses. If Error
 	// is nil, then http.Error is used to generate the HTTP response.
-	Error func(*atreugo.RequestCtx, error, int)
+	Error atreugo.ErrorView
+
+	// Logger is used for logging formatted messages.
+	Logger *logger.Logger
 }
 
 // Conn represents a WebSocket connection.

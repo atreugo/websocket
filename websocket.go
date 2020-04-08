@@ -1,6 +1,8 @@
 package websocket
 
 import (
+	"os"
+
 	"github.com/fasthttp/websocket"
 	"github.com/savsgio/atreugo/v11"
 	"github.com/savsgio/go-logger"
@@ -18,6 +20,14 @@ func defaultErrorView(ctx *atreugo.RequestCtx, err error, statusCode int) {
 }
 
 func New(cfg Config) *Upgrader {
+	if cfg.Error == nil {
+		cfg.Error = defaultErrorView
+	}
+
+	if cfg.Logger == nil {
+		cfg.Logger = logger.New("atreugo-websocket", logger.ERROR, os.Stderr)
+	}
+
 	upgrader := &websocket.FastHTTPUpgrader{
 		HandshakeTimeout:  cfg.HandshakeTimeout,
 		ReadBufferSize:    cfg.ReadBufferSize,
@@ -38,17 +48,13 @@ func New(cfg Config) *Upgrader {
 		return false
 	}
 
-	if cfg.Error == nil {
-		cfg.Error = defaultErrorView
-	}
-
 	upgrader.Error = func(ctx *fasthttp.RequestCtx, status int, reason error) {
 		actx := acquireRequestCtx(ctx)
 		cfg.Error(actx, reason, status)
 		releaseRequestCtx(actx)
 	}
 
-	return &Upgrader{FastHTTPUpgrader: upgrader}
+	return &Upgrader{upgrader: upgrader, logger: cfg.Logger}
 }
 
 func (u *Upgrader) Upgrade(viewFn View) atreugo.View {
@@ -60,14 +66,15 @@ func (u *Upgrader) Upgrade(viewFn View) atreugo.View {
 			ws.values.SetBytes(key, value)
 		})
 
-		return u.FastHTTPUpgrader.Upgrade(ctx.RequestCtx, func(conn *websocket.Conn) {
+		return u.upgrader.Upgrade(ctx.RequestCtx, func(conn *websocket.Conn) {
 			// Ensure set the connection
 			ws.Conn = conn
 
 			if err := viewFn(ws); err != nil && !websocket.IsCloseError(err, closeCodes...) {
-				logger.Errorf("Websocket - %v", err)
+				u.logger.Errorf("Websocket - %v", err)
 			}
 
+			ws.Close()
 			releaseConn(ws)
 		})
 	}
