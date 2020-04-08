@@ -8,11 +8,12 @@ import (
 	"github.com/savsgio/dictpool"
 )
 
+// Upgrader tool to convert the websocket view to an atreugo view
 type Upgrader struct {
 	*websocket.FastHTTPUpgrader
 }
 
-// WebsocketConfig configuration for upgrading an HTTP connection to a WebSocket connection.
+// Config configuration for upgrading an HTTP connection to a WebSocket connection.
 type Config struct {
 	// Specifies either the allowed origins.
 	// The "*" wildcard, allow any origin.
@@ -46,7 +47,7 @@ type Config struct {
 	Error func(*atreugo.RequestCtx, error, int)
 }
 
-// WebsocketConn represents a WebSocket connection.
+// Conn represents a WebSocket connection.
 type Conn struct {
 	values *dictpool.Dict
 
