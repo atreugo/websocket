@@ -38,6 +38,10 @@ func New(cfg Config) *Upgrader {
 		return false
 	}
 
+	if cfg.Error == nil {
+		cfg.Error = defaultErrorView
+	}
+
 	upgrader.Error = func(ctx *fasthttp.RequestCtx, status int, reason error) {
 		actx := acquireRequestCtx(ctx)
 		cfg.Error(actx, reason, status)
