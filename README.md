@@ -7,7 +7,7 @@ Based on: [fasthttp/websocket](https://github.com/fasthttp/websocket)
 ## Install
 
 ```bash
-    go get github.com/atreugo/websocket
+go get github.com/atreugo/websocket
 ```
 
 ## How it works?:
