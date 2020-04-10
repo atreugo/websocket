@@ -1,3 +1,5 @@
+github.com/atreugo/httptest v0.0.0-20200410103927-bb2ea5efd99e h1:sLMweZ3+qDdicD3rf7EDzCDXdddTBXPfbYhFx9+YH60=
+github.com/atreugo/httptest v0.0.0-20200410103927-bb2ea5efd99e/go.mod h1:bEGWk0LV/yI2eNVQmxliAxjpnRymPGtGuA9BvUOsH5A=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/fasthttp/router v1.0.1 h1:OEc/ITEJ7CQbQZ4UTPwQynBka/kmL/lrQsc2chKbHRo=
