@@ -12,4 +12,4 @@ go get github.com/atreugo/websocket
 
 ## How it works?
 
-Go to [examples](https://github.com/atreugo/websocket/tree/master/examples) directory to see how to use it.
+Go to [examples](https://github.com/atreugo/examples/tree/master/websocket) directory to see how to use it.
