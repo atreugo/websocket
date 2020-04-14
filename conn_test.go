@@ -44,3 +44,16 @@ func Test_SetAndGetUserValue(t *testing.T) {
 		t.Error("UserValue is not saved")
 	}
 }
+
+func Test_SetAndGetUserValueBytes(t *testing.T) {
+	wConn := new(websocket.Conn)
+
+	conn := acquireConn()
+	conn.Conn = wConn
+
+	conn.SetUserValueBytes([]byte("key"), "value")
+
+	if val := conn.UserValueBytes([]byte("key")); val == nil {
+		t.Error("UserValue is not saved")
+	}
+}

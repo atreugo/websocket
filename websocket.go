@@ -19,6 +19,7 @@ func defaultErrorView(ctx *atreugo.RequestCtx, err error, statusCode int) {
 	ctx.Error(err.Error(), statusCode)
 }
 
+// New returns an upgrader tool
 func New(cfg Config) *Upgrader {
 	if cfg.Error == nil {
 		cfg.Error = defaultErrorView
@@ -57,6 +58,19 @@ func New(cfg Config) *Upgrader {
 	return &Upgrader{upgrader: upgrader, logger: cfg.Logger}
 }
 
+// Upgrade converts the websocket view to an atreugo view.
+// The returned view upgrades the HTTP server connection
+// to the WebSocket protocol.
+//
+// All ctx.UserValues are stored in the websocket connection,
+// being availables through ws.UserValue()
+//
+// The responseHeader is included in the response to the client's upgrade
+// request. Use the responseHeader to specify cookies (Set-Cookie) and the
+// application negotiated subprotocol (Sec-WebSocket-Protocol).
+//
+// If the upgrade fails, the view replies to the client with an HTTP error
+// response.
 func (u *Upgrader) Upgrade(viewFn View) atreugo.View {
 	return func(ctx *atreugo.RequestCtx) error {
 		ws := acquireConn()
