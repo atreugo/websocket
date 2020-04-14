@@ -5,7 +5,7 @@ import (
 
 	"github.com/fasthttp/websocket"
 	"github.com/savsgio/atreugo/v11"
-	"github.com/savsgio/go-logger"
+	"github.com/savsgio/go-logger/v2"
 	"github.com/valyala/fasthttp"
 )
 
