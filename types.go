@@ -9,7 +9,7 @@ import (
 	"github.com/savsgio/go-logger/v2"
 )
 
-// Upgrader tool to convert the websocket view to an atreugo view
+// Upgrader tool to convert the websocket view to an atreugo view.
 type Upgrader struct {
 	upgrader *websocket.FastHTTPUpgrader
 	logger   *logger.Logger

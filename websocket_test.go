@@ -11,7 +11,7 @@ import (
 	"github.com/valyala/fasthttp"
 )
 
-func Test_New(t *testing.T) {
+func Test_New(t *testing.T) { // nolint:funlen
 	cfg := Config{
 		AllowedOrigins:    []string{"atreugo.test"},
 		HandshakeTimeout:  10,
@@ -37,6 +37,7 @@ func Test_New(t *testing.T) {
 
 	wantSubprotocols := strings.Join(cfg.Subprotocols, ",")
 	subprotocols := strings.Join(u.upgrader.Subprotocols, ",")
+
 	if subprotocols != wantSubprotocols {
 		t.Errorf("Upgrader.Subprotocols == %s, want %s", subprotocols, wantSubprotocols)
 	}

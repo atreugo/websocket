@@ -19,7 +19,7 @@ func defaultErrorView(ctx *atreugo.RequestCtx, err error, statusCode int) {
 	ctx.Error(err.Error(), statusCode)
 }
 
-// New returns an upgrader tool
+// New returns an upgrader tool.
 func New(cfg Config) *Upgrader {
 	if cfg.Error == nil {
 		cfg.Error = defaultErrorView
@@ -50,9 +50,9 @@ func New(cfg Config) *Upgrader {
 	}
 
 	upgrader.Error = func(ctx *fasthttp.RequestCtx, status int, reason error) {
-		actx := acquireRequestCtx(ctx)
+		actx := atreugo.AcquireRequestCtx(ctx)
 		cfg.Error(actx, reason, status)
-		releaseRequestCtx(actx)
+		atreugo.ReleaseRequestCtx(actx)
 	}
 
 	return &Upgrader{upgrader: upgrader, logger: cfg.Logger}
@@ -92,5 +92,4 @@ func (u *Upgrader) Upgrade(viewFn View) atreugo.View {
 			releaseConn(ws)
 		})
 	}
-
 }
