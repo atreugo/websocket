@@ -1,9 +1,11 @@
 github.com/andybalholm/brotli v1.0.0 h1:7UCwP93aiSfvWpapti8g88vVVGp2qqtGyePsSuDafo4=
 github.com/andybalholm/brotli v1.0.0/go.mod h1:loMXtMfwqflxFJPmdbJO0a3KNoPuLBgiu3qAvBg8x/Y=
-github.com/atreugo/httptest v0.0.0-20200529113958-ec7fdacdf067 h1:yLXTkx8Lqfun77Nl9JEf28/a30OyOV9Mcoc9lu+OFKE=
-github.com/atreugo/httptest v0.0.0-20200529113958-ec7fdacdf067/go.mod h1:HHArkYx4RpcH2sS4W2KLVCqRdIEiIQSX3ExNcRwQQ6k=
-github.com/fasthttp/router v1.1.5 h1:+F0ZWUu3i+D3o/HnnuxpN0J8U6CXQCPx0xYVaeOJ2g4=
-github.com/fasthttp/router v1.1.5/go.mod h1:W5ZxvX7D6aU2bWeYZ+MGuWVMsP2UhjIu+QftD1B9oIg=
+github.com/atreugo/httptest v0.0.0-20200602121418-5a88d8a33752 h1:NeeGkk9JF4zVr9GnJbl0NU3JnNANLk0pFEF8gLg+lTM=
+github.com/atreugo/httptest v0.0.0-20200602121418-5a88d8a33752/go.mod h1:Yk+FanO7RYTG1hZIlAHDgcgH5kDsKR3+0e61Dks0eA8=
+github.com/atreugo/mock v0.0.0-20200601091009-13c275b330b0 h1:IVqe9WnancrkICl5HqEfGjrnkQ4+VsU5fodcuFVoG/A=
+github.com/atreugo/mock v0.0.0-20200601091009-13c275b330b0/go.mod h1:HTHAc8RoZXMVTr6wZQN7Jjm3mYMnbfkqqKdnQgSoe9o=
+github.com/fasthttp/router v1.1.6 h1:lBcXxp1ZNoNbSeh4+RvAaXKSEiHU6sGd+gEMpd5Xjog=
+github.com/fasthttp/router v1.1.6/go.mod h1:E1mpv7mrQzAhiSQdqhRb+GBTC7MEV+bLFVmgzSA5oFM=
 github.com/fasthttp/websocket v1.4.2 h1:AU/zSiIIAuJjBMf5o+vO0syGOnEfvZRu40xIhW/3RuM=
 github.com/fasthttp/websocket v1.4.2/go.mod h1:smsv/h4PBEBaU0XDTY5UwJTpZv69fQ0FfcLJr21mA6Y=
 github.com/klauspost/compress v1.8.2/go.mod h1:RyIbtBH6LamlWaDj8nUwkbUhJ87Yi3uG0guNDohfE1A=
@@ -12,8 +14,8 @@ github.com/klauspost/compress v1.10.4/go.mod h1:aoV0uJVorq1K+umq18yTdKaF57EivdYs
 github.com/klauspost/cpuid v1.2.1/go.mod h1:Pj4uuM528wm8OyEC2QMXAi2YiTZ96dNQPGgoMS4s3ek=
 github.com/philhofer/fwd v1.0.0 h1:UbZqGr5Y38ApvM/V/jEljVxwocdweyH+vmYvRPBnbqQ=
 github.com/philhofer/fwd v1.0.0/go.mod h1:gk3iGcWd9+svBvR0sR+KPcfE+RNWozjowpeBVG3ZVNU=
-github.com/savsgio/atreugo/v11 v11.2.3 h1:DcQWJ4cNuUSo2j0xAGMEjaZlQXK/V6Ot5C8BfXCWKDM=
-github.com/savsgio/atreugo/v11 v11.2.3/go.mod h1:cudqeH6Mjoo+cMF/nC3IjQxv4U0uvMHRxTLrwxgQ8LI=
+github.com/savsgio/atreugo/v11 v11.3.0 h1:KrWFPqwVBVCDw3sq+sF80ybsKu0U+ayJEwfKIU9aDq8=
+github.com/savsgio/atreugo/v11 v11.3.0/go.mod h1:Tpri0LOjcy6s3sKD4d8PiLwbKtlIaQKcgb2glNZs79Y=
 github.com/savsgio/dictpool v0.0.0-20200414074025-215dfcb77c2c h1:EVgT3hCwdDn/HmAmzRLEAoK2qHhcO8AD22AvPAE1/mk=
 github.com/savsgio/dictpool v0.0.0-20200414074025-215dfcb77c2c/go.mod h1:InhUgunRRHK3vhg8YZHIRnxyoQGvGxwOE1p55leevWU=
 github.com/savsgio/go-logger/v2 v2.0.0 h1:9CzMIHfAzHoMJoY+0ODI9DJGfBxRIVqI7jZkg47MRrQ=
@@ -26,8 +28,8 @@ github.com/tinylib/msgp v1.1.2/go.mod h1:+d+yLhGm8mzTaHzB+wgMYrodPfmZrzkirds8fDW
 github.com/valyala/bytebufferpool v1.0.0 h1:GqA5TC/0021Y/b9FG4Oi9Mr3q7XYx6KllzawFIhcdPw=
 github.com/valyala/bytebufferpool v1.0.0/go.mod h1:6bBcMArwyJ5K/AmCkWv1jt77kVWyCJ6HpOuEn7z0Csc=
 github.com/valyala/fasthttp v1.9.0/go.mod h1:FstJa9V+Pj9vQ7OJie2qMHdwemEDaDiSdBnvPM1Su9w=
-github.com/valyala/fasthttp v1.13.1 h1:Z7kVhKP9NZz+tCSY7AVhCMPPAk7b+e5fq0l/BfdTlFc=
-github.com/valyala/fasthttp v1.13.1/go.mod h1:ol1PCaL0dX20wC0htZ7sYCsvCYmrouYra0zHzaclZhE=
+github.com/valyala/fasthttp v1.14.0 h1:67bfuW9azCMwW/Jlq/C+VeihNpAuJMWkYPBig1gdi3A=
+github.com/valyala/fasthttp v1.14.0/go.mod h1:ol1PCaL0dX20wC0htZ7sYCsvCYmrouYra0zHzaclZhE=
 github.com/valyala/tcplisten v0.0.0-20161114210144-ceec8f93295a h1:0R4NLDRDZX6JcmhJgXi5E4b8Wg84ihbmUKp/GvSPEzc=
 github.com/valyala/tcplisten v0.0.0-20161114210144-ceec8f93295a/go.mod h1:v3UYOV9WzVtRmSR+PDvWpU/qWl4Wa5LApYYX4ZtKbio=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=

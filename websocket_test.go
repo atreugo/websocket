@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/atreugo/httptest"
+	"github.com/atreugo/httptest/assert"
 	"github.com/savsgio/atreugo/v11"
 	"github.com/valyala/fasthttp"
 )
@@ -122,7 +122,7 @@ func Test_Upgrade(t *testing.T) {
 	req.SetRequestURI("/ws")
 	req.Header.SetMethod("GET")
 
-	httptest.AssertView(t, req, fnView, func(resp *fasthttp.Response) {
+	assert.View(t, req, fnView, func(resp *fasthttp.Response) {
 		select {
 		case <-hijackDone:
 		case <-time.After(100 * time.Millisecond):
