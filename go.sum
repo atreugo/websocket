@@ -1,7 +1,7 @@
 github.com/andybalholm/brotli v1.0.0 h1:7UCwP93aiSfvWpapti8g88vVVGp2qqtGyePsSuDafo4=
 github.com/andybalholm/brotli v1.0.0/go.mod h1:loMXtMfwqflxFJPmdbJO0a3KNoPuLBgiu3qAvBg8x/Y=
-github.com/atreugo/httptest v0.0.0-20200721115807-57f3a08c3c2e h1:4q4BPQ+ejPuu0xtYAfb1R4g3Xw2sTh3T1DNq/wzE90o=
-github.com/atreugo/httptest v0.0.0-20200721115807-57f3a08c3c2e/go.mod h1:dw50SzL55JDhsBydq0QurnLaUsNb6CMAaxsxrjD1ZrY=
+github.com/atreugo/httptest v0.0.0-20200721120246-e5c42df14968 h1:kS6dASArMChsNCm9TSy7jQrpYCEiBaKYlryyCnroQZQ=
+github.com/atreugo/httptest v0.0.0-20200721120246-e5c42df14968/go.mod h1:dw50SzL55JDhsBydq0QurnLaUsNb6CMAaxsxrjD1ZrY=
 github.com/atreugo/mock v0.0.0-20200601091009-13c275b330b0 h1:IVqe9WnancrkICl5HqEfGjrnkQ4+VsU5fodcuFVoG/A=
 github.com/atreugo/mock v0.0.0-20200601091009-13c275b330b0/go.mod h1:HTHAc8RoZXMVTr6wZQN7Jjm3mYMnbfkqqKdnQgSoe9o=
 github.com/fasthttp/router v1.2.3 h1:wdhfeMjofXrij5Uhla+RwKqJTplmjyVbBDURdrMVEGE=
