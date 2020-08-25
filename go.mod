@@ -1,6 +1,6 @@
 module github.com/atreugo/websocket
 
-go 1.11
+go 1.12
 
 require (
 	github.com/atreugo/httptest v0.0.0-20200825104155-14603cd34d24
