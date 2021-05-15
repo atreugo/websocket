@@ -4,9 +4,9 @@ go 1.12
 
 require (
 	github.com/atreugo/httptest v0.0.0-20210109162618-1000b95f16dc
-	github.com/fasthttp/websocket v1.4.3-beta.5
-	github.com/savsgio/atreugo/v11 v11.6.0
-	github.com/savsgio/dictpool v0.0.0-20210105101557-9da1bc2fbfce
-	github.com/savsgio/go-logger/v2 v2.1.0
-	github.com/valyala/fasthttp v1.19.0
+	github.com/fasthttp/websocket v1.4.3-rc.4
+	github.com/savsgio/atreugo/v11 v11.7.0
+	github.com/savsgio/dictpool v0.0.0-20210404150759-6de1ea7c0e13
+	github.com/savsgio/go-logger/v2 v2.1.2
+	github.com/valyala/fasthttp v1.24.0
 )
