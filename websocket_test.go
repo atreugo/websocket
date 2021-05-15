@@ -11,7 +11,7 @@ import (
 	"github.com/valyala/fasthttp"
 )
 
-func Test_New(t *testing.T) { // nolint:funlen
+func Test_New(t *testing.T) { // nolint:funlen,cyclop
 	cfg := Config{
 		AllowedOrigins:    []string{"atreugo.test"},
 		HandshakeTimeout:  10,
@@ -80,9 +80,7 @@ func Test_New(t *testing.T) { // nolint:funlen
 		t.Errorf("Upgrader.Error status code == %d, want %d", statusCode, wantStatusCode)
 	}
 
-	wantBody := err.Error()
-
-	if body != wantBody {
+	if wantBody := err.Error(); body != wantBody {
 		t.Errorf("Upgrader.Error body == %s, want %s", body, wantBody)
 	}
 }

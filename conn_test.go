@@ -7,9 +7,7 @@ import (
 )
 
 func Test_aquireConn(t *testing.T) {
-	conn := acquireConn()
-
-	if conn == nil {
+	if conn := acquireConn(); conn == nil {
 		t.Error("Conn is nil")
 	}
 }
