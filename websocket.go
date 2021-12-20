@@ -5,7 +5,7 @@ import (
 
 	"github.com/fasthttp/websocket"
 	"github.com/savsgio/atreugo/v11"
-	"github.com/savsgio/go-logger/v2"
+	"github.com/savsgio/go-logger/v3"
 	"github.com/valyala/fasthttp"
 )
 
@@ -26,7 +26,7 @@ func New(cfg Config) *Upgrader {
 	}
 
 	if cfg.Logger == nil {
-		cfg.Logger = logger.New("atreugo-websocket", logger.ERROR, os.Stderr)
+		cfg.Logger = logger.New(logger.ERROR, os.Stderr)
 	}
 
 	upgrader := &websocket.FastHTTPUpgrader{
@@ -77,7 +77,7 @@ func (u *Upgrader) Upgrade(viewFn View) atreugo.View {
 
 		// Copy user values
 		ctx.VisitUserValues(func(key []byte, value interface{}) {
-			ws.values.SetBytes(key, value)
+			ws.values.Set(string(key), value)
 		})
 
 		return u.upgrader.Upgrade(ctx.RequestCtx, func(conn *websocket.Conn) {

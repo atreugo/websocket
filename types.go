@@ -6,7 +6,7 @@ import (
 	"github.com/fasthttp/websocket"
 	"github.com/savsgio/atreugo/v11"
 	"github.com/savsgio/dictpool"
-	"github.com/savsgio/go-logger/v2"
+	"github.com/savsgio/go-logger/v3"
 )
 
 // Upgrader tool to convert the websocket view to an atreugo view.
