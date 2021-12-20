@@ -1,6 +1,6 @@
 # Websocket
 
-[![Build Status](https://travis-ci.org/atreugo/websocket.svg?branch=master)](https://travis-ci.org/atreugo/websocket)
+[![Test status](https://github.com/atreugo/websocket/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/atreugo/websocket/actions)
 [![Go Report Card](https://goreportcard.com/badge/github.com/atreugo/websocket)](https://goreportcard.com/report/github.com/atreugo/websocket)
 [![GoDev](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)](https://pkg.go.dev/github.com/atreugo/websocket)
 [![GitHub release](https://img.shields.io/github/release/atreugo/websocket.svg)](https://github.com/atreugo/websocket/releases)
@@ -18,3 +18,7 @@ go get github.com/atreugo/websocket
 ## How it works?
 
 Go to [examples](https://github.com/atreugo/examples/tree/master/websocket) to see how to use it.
+
+## Contributing
+
+**Feel free to contribute...** :wink:
