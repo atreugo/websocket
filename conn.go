@@ -16,7 +16,7 @@ var connPool = &sync.Pool{
 }
 
 func acquireConn() *Conn {
-	return connPool.Get().(*Conn)
+	return connPool.Get().(*Conn) // nolint:forcetypeassert
 }
 
 func releaseConn(ws *Conn) {
