@@ -5,7 +5,6 @@ import (
 
 	"github.com/fasthttp/websocket"
 	"github.com/savsgio/atreugo/v11"
-	"github.com/savsgio/dictpool"
 	"github.com/savsgio/go-logger/v3"
 )
 
@@ -54,7 +53,7 @@ type Config struct {
 
 // Conn represents a WebSocket connection.
 type Conn struct {
-	values *dictpool.Dict
+	values map[string]interface{}
 
 	*websocket.Conn
 }

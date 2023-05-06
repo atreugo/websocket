@@ -97,7 +97,10 @@ func Test_Upgrade(t *testing.T) {
 	hijackDone := make(chan struct{}, 1)
 	wsView := u.Upgrade(func(ws *Conn) error {
 		executed = true
-		ws.values.Map(values)
+
+		for k, v := range ws.values {
+			values[k] = v
+		}
 
 		close(hijackDone)
 

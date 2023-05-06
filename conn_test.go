@@ -25,7 +25,7 @@ func Test_releaseConn(t *testing.T) {
 		t.Error("Conn is not nil")
 	}
 
-	if len(conn.values.D) > 0 {
+	if len(conn.values) > 0 {
 		t.Error("Conn.values has not been reset")
 	}
 }

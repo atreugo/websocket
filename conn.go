@@ -3,13 +3,13 @@ package websocket
 import (
 	"sync"
 
-	"github.com/savsgio/dictpool"
+	"github.com/savsgio/gotils/strconv"
 )
 
-var connPool = &sync.Pool{
+var connPool = sync.Pool{
 	New: func() interface{} {
 		ws := new(Conn)
-		ws.values = new(dictpool.Dict)
+		ws.values = make(map[string]interface{})
 
 		return ws
 	},
@@ -25,18 +25,21 @@ func releaseConn(ws *Conn) {
 }
 
 func (ws *Conn) reset() {
-	ws.values.Reset()
+	for k := range ws.values {
+		delete(ws.values, k)
+	}
+
 	ws.Conn = nil
 }
 
 // UserValue returns the value stored via SetUserValue* under the given key.
 func (ws *Conn) UserValue(key string) interface{} {
-	return ws.values.Get(key)
+	return ws.values[key]
 }
 
 // UserValueBytes returns the value stored via SetUserValue* under the given key.
 func (ws *Conn) UserValueBytes(key []byte) interface{} {
-	return ws.values.GetBytes(key)
+	return ws.UserValue(strconv.B2S(key))
 }
 
 // SetUserValue stores the given value (arbitrary object)
@@ -44,7 +47,7 @@ func (ws *Conn) UserValueBytes(key []byte) interface{} {
 //
 // The value stored may be obtained by UserValue*.
 func (ws *Conn) SetUserValue(key string, value interface{}) {
-	ws.values.Set(key, value)
+	ws.values[key] = value
 }
 
 // SetUserValueBytes stores the given value (arbitrary object)
@@ -52,5 +55,5 @@ func (ws *Conn) SetUserValue(key string, value interface{}) {
 //
 // The value stored may be obtained by UserValue*.
 func (ws *Conn) SetUserValueBytes(key []byte, value interface{}) {
-	ws.values.SetBytes(key, value)
+	ws.SetUserValue(string(key), value)
 }

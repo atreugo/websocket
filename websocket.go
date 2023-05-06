@@ -77,7 +77,7 @@ func (u *Upgrader) Upgrade(viewFn View) atreugo.View {
 
 		// Copy user values
 		ctx.VisitUserValues(func(key []byte, value interface{}) {
-			ws.values.Set(string(key), value)
+			ws.SetUserValueBytes(key, value)
 		})
 
 		return u.upgrader.Upgrade(ctx.RequestCtx, func(conn *websocket.Conn) {
